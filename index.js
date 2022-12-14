@@ -191,3 +191,27 @@ const addEmployee = () => {
       }
     });
 };
+
+// generate HTML page file 
+const writeFile = (data) => {
+  fs.writeFile("./dist/index.html", data, (err) => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log("Your team's roster has been successfully created!");
+    }
+  });
+};
+
+addManager()
+  .then(addEmployee)
+  .then((teamArray) => {
+    return generateHTML(teamArray);
+  })
+  .then((pageHTML) => {
+    return writeFile(pageHTML);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
