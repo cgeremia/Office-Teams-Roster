@@ -5,8 +5,8 @@
 }
 
 :root {
-  --primary: rgb(203, 245, 198);
-  --secondary: rgb(241, 233, 204);
+  --primary: rgb(150, 192, 146);
+  --secondary: rgb(224, 222, 213);
 }
 
 body {
@@ -31,10 +31,11 @@ body {
 .card-body {
   background-color: var(--secondary);
   color: var(--primary);
+  text-align: center;
 }
 
 .container {
   margin: 100px auto;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   display: flex;
 }

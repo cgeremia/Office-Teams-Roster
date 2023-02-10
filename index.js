@@ -1,9 +1,10 @@
 const generateHTML = require("./src/generateHTML");
 const fs = require("fs");
 const inquirer = require("inquirer");
-const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Manager = require("./lib/Manager.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
+const Employee = require("./lib/Employee.js")
 const teamArray = [];
 
 // Manager prompts
@@ -67,7 +68,6 @@ const addManager = () => {
     .then((managerInput) => {
       const { name, id, email, officeNumber } = managerInput;
       const manager = new Manager(name, id, email, officeNumber);
-
       teamArray.push(manager);
       console.log(manager);
     });
